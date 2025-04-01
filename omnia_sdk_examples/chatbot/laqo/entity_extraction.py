@@ -11,6 +11,8 @@ travel_location_system_message = f"""
 -- location: <{EUROPE}>
 -- If there is no location in user's message, return location: <none>
 - Examples:
+-- I want to travel to Europe -> location: <{EUROPE}>
+-- I want to travel around the world -> location: <{WORLD}>
 -- I am planning to travel to Greece -> location: <{EUROPE}>
 -- I am planning to travel to Paris -> location: <{EUROPE}>
 -- I am planning to travel to USA -> location: <{WORLD}>
@@ -19,11 +21,15 @@ travel_location_system_message = f"""
 
 
 def extract_location(message: str) -> str:
+    # if user presses button then message contains postback data "world" or "europe"
+    if message == "europe" or message == "world":
+        return message
+    # user wrote text instead of pressing button
     completion = chat_completions(
         messages=[
             {"role": "system", "content": travel_location_system_message},
             {"role": "user", "content": f" User question: **{message}**"},
-        ],
+            ],
         extract_params=True,
-    )
-    return completion.model_extra["parsed_params"]["p1"]
+        )
+    return completion.model_extra["parsed_params"].get("p1", "europe")
