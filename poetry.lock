@@ -236,7 +236,7 @@ description = "Cross-platform colored terminal text."
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 groups = ["main"]
-markers = "sys_platform == \"win32\" or platform_system == \"Windows\""
+markers = "platform_system == \"Windows\" or sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
@@ -658,8 +658,8 @@ starlette = "^0.45.3"
 [package.source]
 type = "git"
 url = "https://github.com/infobip/omnia-sdk.git"
-reference = "python3-13"
-resolved_reference = "ffcaef7df0d6557abc51c73bfb812fa7c9106779"
+reference = "HEAD"
+resolved_reference = "e41f8b6d11fb79e7cd0d7f4a75bd84d7a06af7ea"
 
 [[package]]
 name = "openai"
@@ -1369,4 +1369,4 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<3.14"
-content-hash = "e896f1e7d141fac50571a3dbc4e028ed443fb9cc85cff1d346e2830c657b7e18"
+content-hash = "51183b60eec9b72a37691ead8b41950ee0a79e7ca5bdbe04fcec71a9020a660e"

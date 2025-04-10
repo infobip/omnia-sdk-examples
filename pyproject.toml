@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
     "certifi (>=2025.1.31,<2026.0.0)",
-    "omnia-sdk @ git+https://github.com/infobip/omnia-sdk.git@python3-13",
+    "omnia-sdk @ git+https://github.com/infobip/omnia-sdk.git",
 ]
 
 
