@@ -6,7 +6,7 @@ from omnia_sdk.workflow.tools.channels.omni_channels import BUTTON_REPLY, CONSOL
 from omnia_sdk_examples.chatbot.omnichannel_bot.foodie_graph import Foodie
 
 if __name__ == "__main__":
-    chatbot_configuration = ChatbotConfiguration(default_language="en")
+    chatbot_configuration = ChatbotConfiguration.from_yaml("./chatbot_configuration.yaml")
     config = {CONFIGURABLE: {"thread_id": "1234", "channel": CONSOLE}}
     foodie = Foodie(configuration=chatbot_configuration)
 
