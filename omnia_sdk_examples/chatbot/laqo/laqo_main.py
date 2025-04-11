@@ -1,3 +1,4 @@
+import yaml
 from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
 from omnia_sdk.workflow.chatbot.chatbot_state import Message
 from omnia_sdk.workflow.chatbot.constants import CONFIGURABLE, PAYLOAD, TEXT, TYPE, USER
@@ -7,21 +8,19 @@ from omnia_sdk.workflow.tools.localization.cpaas_translation_table import (
     )
 
 from omnia_sdk_examples.chatbot.laqo.laqo_graph import Pavle
-from omnia_sdk_examples.chatbot.laqo.localization import (
-    translation_table_constants,
-    translation_table_cpaas,
-    )
 
 if __name__ == "__main__":
-    chatbot_configuration = ChatbotConfiguration(default_language="en")
+    chatbot_configuration = ChatbotConfiguration.from_yaml("./chatbot_configuration.yaml")
+    translation_table = CPaaSTranslationTable.from_yaml("./translation_table.yaml")
+    build_configuration_dict = yaml.safe_load(open("./build.yaml", "rb").read())
+
     config = {
         CONFIGURABLE: {
             "thread_id": "123",
             "channel": "CONSOLE",
             }
         }
-    translation_table = CPaaSTranslationTable(translation_table_cpaas=translation_table_cpaas,
-                                              translation_table_constants=translation_table_constants)
+
     pavle = Pavle(configuration=chatbot_configuration, translation_table=translation_table)
 
     # ----- Chatbot -----

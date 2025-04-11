@@ -1,0 +1,130 @@
+translation_table_cpaas:
+  travel_intro:
+    hr:
+      body:
+        text: "Baš mi je drago da putuješ! Za izračun ponude putnog osiguranja treba mi nekoliko informacija o putovanju."
+        type: "TEXT"
+    en:
+      body:
+        text: "I'm so glad you're traveling! To calculate a travel insurance quote, I need some information about the trip."
+        type: "TEXT"
+
+  travel_type:
+    hr:
+      body:
+        text: "Želiš osiguranje za samo jedno putovanje ili planiraš više putovanja u godini dana?"
+        type: "TEXT"
+      buttons:
+        - type: "REPLY"
+          text: "Jedno"
+          postbackData: "single"
+        - type: "REPLY"
+          text: "Više"
+          postbackData: "multiple"
+    en:
+      body:
+        text: "Do you want insurance for just one trip or are you planning several trips in a year?"
+        type: "TEXT"
+      buttons:
+        - type: "REPLY"
+          text: "Single"
+          postbackData: "single"
+        - type: "REPLY"
+          text: "Multiple"
+          postbackData: "multiple"
+
+  travel_duration:
+    hr:
+      body:
+        text: "Hvala ti! Koliko dana traje tvoje putovanje? Upiši broj od 1 do 30."
+        type: "TEXT"
+    en:
+      body:
+        text: "Thank you! How many days does your trip last? Enter a number from 1 to 30."
+        type: "TEXT"
+
+  travel_location:
+    hr:
+      body:
+        text: "Super! Gdje putuješ? Putovanje je u Europi ili ideš negdje drugdje u svijetu?"
+        type: "TEXT"
+      buttons:
+        - type: "REPLY"
+          text: "Europa"
+          postbackData: "europe"
+        - type: "REPLY"
+          text: "Svijet"
+          postbackData: "world"
+    en:
+      body:
+        text: "Great! Where are you traveling? Is the trip in Europe or are you going somewhere else in the world?"
+        type: "TEXT"
+      buttons:
+        - type: "REPLY"
+          text: "Europe"
+          postbackData: "europe"
+        - type: "REPLY"
+          text: "World"
+          postbackData: "world"
+
+  single_offer:
+    hr:
+      body:
+        text: |
+          Odlično! Imam sve potrebne informacije za izračun osnovne cijene putnog osiguranja za 1 osobu:
+          Tip putovanja: {localized_num_trips}
+          Trajanje putovanja u danima: {travel_duration}
+          Mjesto putovanja: {localized_location}
+          Informativan izračun: *{cost}*
+        type: "TEXT"
+    en:
+      body:
+        text: |
+          Great! I have all the necessary information to calculate the basic price of travel insurance for 1 person:
+          Type of travel: {localized_num_trips}
+          Duration of the trip in days: {travel_duration}
+          Travel location: {localized_location}
+          Informative calculation: *{cost}*
+        type: "TEXT"
+
+  multiple_offer:
+    hr:
+      body:
+        text: |
+          Odlično! Imam sve potrebne informacije za izračun osnovne cijene putnog osiguranja za 1 osobu:
+          Tip putovanja: {localized_num_trips}
+          Mjesto putovanja: {localized_location}
+          Informativan izračun: *{cost}*
+        type: "TEXT"
+    en:
+      body:
+        text: |
+          Great! I have all the necessary information to calculate the basic price of travel insurance for 1 person:
+          Type of travel: {localized_num_trips}
+          Travel location: {localized_location}
+          Informative calculation: *{cost}*
+        type: "TEXT"
+
+  outro:
+    hr:
+      body:
+        text: "Putovanja su uzbudljiva, ali ne čekaj s odlukom o kupnji osiguranja. Provjeri dodatna pokrića i trenutnu promociju.\n https://kupi.laqo.hr/putno/putovanje"
+        type: "TEXT"
+    en:
+      body:
+        text: "Travel is exciting, but don't wait to buy insurance. Check out additional coverage and the current promotion.\n https://kupi.laqo.hr/putno/put"
+        type: "TEXT"
+
+translation_table_constants:
+  europe:
+    hr: "Europa"
+    en: "Europe"
+  world:
+    hr: "Svijet"
+    en: "World"
+  single:
+    hr: "Jedno"
+    en: "Single"
+  multiple:
+    hr: "Više"
+    en: "Multiple"
