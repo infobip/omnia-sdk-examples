@@ -3,10 +3,10 @@ from omnia_sdk.workflow.chatbot.chatbot_state import Message
 from omnia_sdk.workflow.chatbot.constants import CONFIGURABLE, PAYLOAD, TEXT, TYPE, USER
 from omnia_sdk.workflow.tools.channels.omni_channels import BUTTON_REPLY, CONSOLE
 
-from omnia_sdk_examples.chatbot.omnichannel_bot.foodie_graph import Foodie
+from omnichannel_bot.graph import Foodie
 
 if __name__ == "__main__":
-    chatbot_configuration = ChatbotConfiguration.from_yaml("./chatbot_configuration.yaml")
+    chatbot_configuration = ChatbotConfiguration.from_yaml("chatbot_configuration.yaml")
     config = {CONFIGURABLE: {"thread_id": "1234", "channel": CONSOLE}}
     foodie = Foodie(configuration=chatbot_configuration)
 

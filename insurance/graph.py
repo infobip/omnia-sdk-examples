@@ -10,9 +10,9 @@ from omnia_sdk.workflow.tools.contact_center.agent_tools import (
     time_aware_agent_transfer,
     )
 
-from omnia_sdk_examples.chatbot.laqo import entity_extraction, travel_insurance
-from omnia_sdk_examples.chatbot.laqo.intent import detect_laqo_intent
-from omnia_sdk_examples.chatbot.laqo.localization import (
+from insurance.chatbot.ner import entity_extraction, travel_insurance
+from insurance.chatbot.ner.intent import detect_laqo_intent
+from insurance.chatbot.ner.localization import (
     MULTIPLE_OFFER,
     OUTRO,
     SINGLE_OFFER,

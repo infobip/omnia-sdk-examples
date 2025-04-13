@@ -1,4 +1,4 @@
-from omnia_sdk_examples.chatbot.laqo.entity_extraction import WORLD, EUROPE
+from insurance.chatbot.ner.entity_extraction import WORLD, EUROPE
 
 
 def calculate_multiple_trip(location: str, **kwargs):

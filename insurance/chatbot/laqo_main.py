@@ -6,13 +6,12 @@ from omnia_sdk.workflow.tools.channels.omni_channels import BUTTON_REPLY
 from omnia_sdk.workflow.tools.localization.cpaas_translation_table import (
     CPaaSTranslationTable,
     )
-
-from omnia_sdk_examples.chatbot.laqo.laqo_graph import Pavle
+from insurance.graph import Pavle
 
 if __name__ == "__main__":
-    chatbot_configuration = ChatbotConfiguration.from_yaml("./chatbot_configuration.yaml")
-    translation_table = CPaaSTranslationTable.from_yaml("./translation_table.yaml")
-    build_configuration_dict = yaml.safe_load(open("./build.yaml", "rb").read())
+    chatbot_configuration = ChatbotConfiguration.from_yaml("../chatbot_configuration.yaml")
+    translation_table = CPaaSTranslationTable.from_yaml("../translation_table.yaml")
+    build_configuration_dict = yaml.safe_load(open("../build.yaml", "rb").read())
 
     config = {
         CONFIGURABLE: {
