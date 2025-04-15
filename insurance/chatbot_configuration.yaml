@@ -1,1 +1,5 @@
 default_language: "en"
+language_detector:
+  expected_languages:
+    - "en"
+    - "hr"
