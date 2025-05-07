@@ -1,4 +1,6 @@
 import yaml
+import logging as log
+
 from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
 from omnia_sdk.workflow.chatbot.chatbot_state import Message
 from omnia_sdk.workflow.chatbot.constants import CONFIGURABLE, PAYLOAD, TEXT, TYPE, USER
@@ -9,6 +11,7 @@ from omnia_sdk.workflow.tools.localization.cpaas_translation_table import (
 from insurance.graph import Pavle
 
 if __name__ == "__main__":
+    log.getLogger("root").setLevel(log.INFO)
     chatbot_configuration = ChatbotConfiguration.from_yaml("../chatbot_configuration.yaml")
     translation_table = CPaaSTranslationTable.from_yaml("../translation_table.yaml")
     build_configuration_dict = yaml.safe_load(open("../build.yaml", "rb").read())
