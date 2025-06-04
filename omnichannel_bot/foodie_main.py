@@ -2,8 +2,15 @@ import logging as log
 
 from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
 from omnia_sdk.workflow.chatbot.chatbot_state import Message
-from omnia_sdk.workflow.chatbot.constants import CONFIGURABLE, PAYLOAD, TEXT, TYPE, USER
-from omnia_sdk.workflow.tools.channels.omni_channels import BUTTON_REPLY, CONSOLE
+from omnia_sdk.workflow.chatbot.constants import (
+    CONFIGURABLE,
+    PAYLOAD,
+    TEXT,
+    TYPE,
+    USER,
+    BUTTON_REPLY,
+)
+from omnia_sdk.workflow.tools.channels.omni_channels import CONSOLE
 
 from omnichannel_bot.graph import Foodie
 

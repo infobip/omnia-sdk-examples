@@ -19,7 +19,7 @@ class Foodie(ChatbotFlow):
         super().__init__(checkpointer=checkpointer, configuration=configuration, translation_table=translation_table)
 
     def start(self, state: State, config: dict):
-        log.info(f"User message: {self.get_user_message_text(state=state)}")
+        log.info(f"User message: {self.get_user_message(state=state).get_text()}")
         self.send_text_response(text="Hello, I am Foodie, your food assistant. I can help you with food recommendations", state=state,
                                 config=config)
         self.send_buttons_response("Choose your favorite food",

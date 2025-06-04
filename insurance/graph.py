@@ -36,7 +36,7 @@ class Pavle(ChatbotFlow):
         super().__init__(checkpointer=checkpointer, configuration=configuration, translation_table=translation_table)
 
     def start(self, state: State, config: dict):
-        text = self.get_user_message_text(state=state)
+        text = self.get_user_message(state=state).get_text()
         intent = detect_laqo_intent(message=text, config=config)
         ChatbotFlow.save_intent(state=state, intent=intent)
 
@@ -44,7 +44,7 @@ class Pavle(ChatbotFlow):
         time_aware_agent_transfer(country_code="HR")
 
     def chatbot(self, state: State, config: dict):
-        text = self.get_user_message_text(state=state)
+        text = self.get_user_message(state=state).get_text()
         reply = assistant_response(message=text, assistant_id=LAQO_ASSISTANT_ID, config=config, language=self.get_language(state))
         ChatbotFlow.send_text_response(text=reply, state=state, config=config)
 
