@@ -1,18 +1,14 @@
-[project]
+[tool.poetry]
 name = "omnia-sdk-examples"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Team42", email = "Team_42@infobip.com"}
+authors = ["Team42 <Team_42@infobip.com>"]
+packages = [
+    { include = "insurance" },
+    { include = "omnichannel_bot" },
 ]
 
 readme = "README.md"
-requires-python = ">=3.12,<3.14"
-dependencies = [
-    "certifi (>=2025.1.31,<2026.0.0)",
-    "omnia-sdk @ git+https://github.com/infobip/omnia-sdk.git",
-]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -23,3 +19,6 @@ name = "PyPI"
 priority = "primary"
 
 [tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+certifi = ">=2025.1.31,<2026.0.0"
+omnia-sdk = {git = "https://github.com/infobip/omnia-sdk.git"}
