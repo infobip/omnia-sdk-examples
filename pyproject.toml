@@ -21,4 +21,4 @@ priority = "primary"
 [tool.poetry.dependencies]
 python = ">=3.12,<3.14"
 certifi = ">=2025.1.31,<2026.0.0"
-omnia-sdk = {git = "https://github.com/infobip/omnia-sdk.git"}
+omnia-sdk = {path = "/Users/rcala/Python_projects/omnia-sdk", develop = true}
