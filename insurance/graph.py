@@ -66,7 +66,7 @@ class Pavle(ChatbotFlow):
         # this is postback data from button or user text message
         location_message = ChatbotFlow.wait_user_input(state=state, config=config)
         # extracted location is always in english language
-        location = entity_extraction.extract_location(message=location_message)
+        location = entity_extraction.extract_location(message=location_message, config=config)
         # we save extracted location for further insurance calculation
         self.save_variable(name=LOCATION, value=location, state=state)
         # we save localized location to generate reply to user

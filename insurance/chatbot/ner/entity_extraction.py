@@ -20,7 +20,7 @@ travel_location_system_message = f"""
 """
 
 
-def extract_location(message: str) -> str:
+def extract_location(message: str, config: dict) -> str:
     # if user presses button then message contains postback data "world" or "europe"
     if message == "europe" or message == "world":
         return message
@@ -31,5 +31,6 @@ def extract_location(message: str) -> str:
             {"role": "user", "content": f" User question: **{message}**"},
             ],
         extract_params=True,
+        config=config
         )
     return completion.model_extra["parsed_params"].get("p1", "europe")
