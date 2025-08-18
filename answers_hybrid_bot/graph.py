@@ -1,8 +1,6 @@
 import logging as log
 
-from langgraph.checkpoint.base import BaseCheckpointSaver
 from langgraph.constants import END
-from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
 from omnia_sdk.workflow.langgraph.chatbot.chatbot_graph import (
     ChatbotFlow,
     State,
@@ -10,13 +8,6 @@ from omnia_sdk.workflow.langgraph.chatbot.chatbot_graph import (
 
 
 class AnswersHybridFlow(ChatbotFlow):
-    def __init__(
-        self,
-        checkpointer: BaseCheckpointSaver = None,
-        configuration: ChatbotConfiguration = None,
-        translation_table=None,
-    ):
-        super().__init__(checkpointer=checkpointer, configuration=configuration)
 
     def start(self, state: State, config: dict):
         log.info("Starting AnswersHybridFlow")
