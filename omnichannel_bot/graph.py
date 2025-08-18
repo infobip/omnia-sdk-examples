@@ -1,22 +1,12 @@
 import logging as log
-from langgraph.checkpoint.base import BaseCheckpointSaver
 from langgraph.constants import END
 
-from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
-from omnia_sdk.workflow.langgraph.chatbot.chatbot_graph import (
-    ChatbotFlow,
-    State,
-    )
-from omnia_sdk.workflow.tools.channels.omni_channels import (
-    ButtonDefinition,
-    )
-from omnia_sdk.workflow.tools.localization.translation_table import TranslationTable
+from omnia_sdk.workflow.langgraph.chatbot.chatbot_graph import ChatbotFlow, State
+from omnia_sdk.workflow.tools.channels.omni_channels import ButtonDefinition
+
 
 
 class Foodie(ChatbotFlow):
-    def __init__(self, checkpointer: BaseCheckpointSaver = None, configuration: ChatbotConfiguration = None,
-                 translation_table: TranslationTable = None):
-        super().__init__(checkpointer=checkpointer, configuration=configuration, translation_table=translation_table)
 
     def start(self, state: State, config: dict):
         log.info(f"User message: {self.get_user_message(state=state).get_text()}")

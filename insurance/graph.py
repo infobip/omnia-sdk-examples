@@ -1,6 +1,4 @@
-from langgraph.checkpoint.base import BaseCheckpointSaver
 from langgraph.constants import END
-from omnia_sdk.workflow.chatbot.chatbot_configuration import ChatbotConfiguration
 from omnia_sdk.workflow.langgraph.chatbot.chatbot_graph import (
     ChatbotFlow,
     State,
@@ -32,8 +30,6 @@ LAQO_ASSISTANT_ID = "8817a65a-c312-4da4-8f9a-7ff6d7eafb05"
 
 
 class Pavle(ChatbotFlow):
-    def __init__(self, checkpointer: BaseCheckpointSaver = None, configuration: ChatbotConfiguration = None, translation_table=None):
-        super().__init__(checkpointer=checkpointer, configuration=configuration, translation_table=translation_table)
 
     def start(self, state: State, config: dict):
         text = self.get_user_message(state=state).get_text()
